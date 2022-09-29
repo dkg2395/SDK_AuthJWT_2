@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "a11cc8dc-5c2c-45c1-b0e9-a6dd69435e78",
+		"name": "springboot-jwt-mysql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"usernameOrEmail\":\"sam\",\r\n   \r\n    \"password\":\"varsha\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8877/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8877",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"name\":\"sam\",\r\n    \"username\":\"sam\",\r\n    \"email\":\"sam@gmail.com\",\r\n    \"password\":\"varsha\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8877/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8877",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "publicApi",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5kaXBAZ21haWwuY29tIiwiaWF0IjoxNjY0NDMyOTk4LCJleHAiOjE2NjUwMzc3OTh9.4H6nmhIbpru5aIR7Dyb2ErNPaCkbQUslhOVJc2qY5rHhxgF3Wyc8cuAFskBKZe-q8FYFOfR5QeXwHU0C7vOG2A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8877/api/StockPriceByCompanyName/lti",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8877",
+					"path": [
+						"api",
+						"StockPriceByCompanyName",
+						"lti"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authRequired",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5kaXBAZ21haWwuY29tIiwiaWF0IjoxNjY0NDMyOTk4LCJleHAiOjE2NjUwMzc3OTh9.4H6nmhIbpru5aIR7Dyb2ErNPaCkbQUslhOVJc2qY5rHhxgF3Wyc8cuAFskBKZe-q8FYFOfR5QeXwHU0C7vOG2A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8877/StockPriceByCompanyName/HERE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8877",
+					"path": [
+						"StockPriceByCompanyName",
+						"HERE"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
